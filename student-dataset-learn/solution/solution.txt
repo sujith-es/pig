@@ -1,0 +1,226 @@
+Notes:
+=======
+1. Used Hortonwork cluster mode 
+2. Results may vary due to more student dataset added.
+
+Load all dataset to HDFS
+=========================
+[root@sandbox ~]# hadoop fs -put student-data /data
+[root@sandbox ~]# hadoop fs -ls /data
+
+
+1.Find out the topper of the school(including all the sections all the classes)
+
+*************
+PIG SCRIPT
+*************
+student = load '/data/student-data' as
+(
+studentName:chararray,
+studentEmail:chararray,
+marks:map[],
+class:chararray
+);
+
+totalMarks = FOREACH student GENERATE studentName,studentEmail,(int)marks#'Science' + (int)marks#'Math' + (int)marks#'English' as totalMark, class;
+sorted = ORDER totalMarks BY totalMark DESC;
+topper = LIMIT sorted 1;
+store topper into ' /data/pigassignment/schooltopper.txt' using PigStorage('|');
+
+=======================
+To view Result in HDFS
+=======================
+
+[root@sandbox ~]# hadoop fs -cat /data/pigassignment/schooltopper.txt/part*
+Ram kumar Mohan |Ram.moh@protonmail.com|286|6:B
+
+
+
+
+
+2.Find out the topper for each class(including both the section)?
+
+*************
+PIG SCRIPT
+*************
+student = load '/data/student-data' as
+(
+studentName:chararray,
+studentEmail:chararray,
+marks:map[],
+class:chararray
+);
+totalMarks = FOREACH student GENERATE studentName,studentEmail,(int)marks#'Science' + (int)marks#'Math' + (int)marks#'English' as totalMark, class;
+transform = FOREACH totalMarks GENERATE studentName,studentEmail,totalMark, FLATTEN(STRSPLIT(class,':'));
+classDetails = FOREACH transform GENERATE $0 as studentName,$1 as studentEmail,$2 as TotalMark,$3 as class,$4 as section;
+grouped = GROUP classDetails BY class;
+ classTopper = FOREACH grouped {
+        sorted = order classDetails BY TotalMark desc;
+        topper    = LIMIT sorted 1;
+        GENERATE  GROUP, FLATTEN(topper);
+};
+result  = FOREACH classTopper GENERATE CONCAT(class,':',section),studentName,studentEmail,TotalMark;
+store result into ' /data/pigassignment/ClassTopper.txt' using PigStorage('|');
+
+=======================
+To view Result in HDFS
+=======================
+[root@sandbox ~]# hadoop fs -cat /data/pigassignment/ClassTopper.txt/part*
+
+
+
+
+3.For a given class,find out who scored highest in english,Maths,Science
+
+Input:- 9   (class number) hardcode this.
+9:A|suraz|suraz.hadoop@gmail.com|english:90  (scored highest from both the section)
+9:B|kiran|kiran@gmail.com|Maths:95
+9:A|Karan|karan.@gmail.com|Science:91
+
+*************
+PIG SCRIPT
+*************
+student = load '/data/student-data' as
+(
+studentName:chararray,
+studentEmail:chararray,
+marks:map[],
+class:chararray
+);
+
+transform = FOREACH student GENERATE studentName,studentEmail,marks, FLATTEN(STRSPLIT(class,':'));
+classDetails = FOREACH transform GENERATE $0 as studentName,$1 as studentEmail,$2 as marks,$3 as class,$4 as section;
+ninthStd = FILTER classDetails BY (class==9);
+
+ScienceLang = FOREACH ninthStd GENERATE studentName,studentEmail,marks#'Science' as ScienceMark, class,section;
+science = ORDER ScienceLang BY ScienceMark desc;
+science_Topper = LIMIT science 1;
+
+englishLang = FOREACH ninthStd GENERATE studentName,studentEmail,marks#'English' as EnglishMark, class,section;
+english = ORDER englishLang BY EnglishMark desc;
+english_Topper = LIMIT english 1;
+
+mathLang = FOREACH ninthStd GENERATE studentName,studentEmail,marks#'Math' as MathMark, class,section;
+math = ORDER mathLang BY MathMark desc;
+math_Topper = LIMIT math 1;
+
+dump english_Topper
+dump science_Topper
+dump math_Topper
+
+
+
+4.Find out the class,which has better average percentage of score
+for a particular class,
+find out the total marks of all the students from both the section & then find the average.
+
+ex: class 9,All students has scored 75.86% on Average and it is the highest average for any class.
+9|75.86
+
+*************
+PIG SCRIPT
+*************
+
+student = load '/data/student-data' as
+(
+studentName:chararray,
+studentEmail:chararray,
+marks:map[],
+class:chararray
+);
+
+avgMarks = FOREACH student GENERATE studentName,studentEmail,(int)marks#'Science' + (int)marks#'Math' + (int)marks#'English' /(float)3 as avgMark, SUBSTRING(class,0,1) as class;
+grouped = group avgMarks by class;
+avgClass = foreach grouped generate group,AVG(avgMarks.avgMark);
+sorted = order avgClass by $1 desc;
+bestStandard = limit sorted 1;
+dump bestStandard;
+
+
+5.Find out all weak students from each class each section as they need special attention.
+A student is called as weak,if they have average of less than 60.
+
+*************
+PIG SCRIPT
+*************
+
+student = load '/data/student-data' as
+(
+studentName:chararray,
+studentEmail:chararray,
+marks:map[],
+class:chararray
+);
+
+avgMarkDetails = FOREACH student GENERATE studentName,studentEmail,(int)marks#'Science' + (int)marks#'Math' + (int)marks#'English' /(float)3 as avgMark,class;
+weakStudents = FILTER avgMarkDetails BY (avgMark<60);
+dump weakStudents	
+
+
+
+6.Find out the list of students who have scored more than 95 in each subject.
+*************
+PIG SCRIPT
+*************
+
+student = load '/data/student-data' as
+(
+studentName:chararray,
+studentEmail:chararray,
+marks:map[],
+class:chararray
+);
+ 
+result = FILTER student BY (marks#'Science' > 95) AND (marks#'Math' > 95) AND (marks#'English' > 95);
+dump result
+
+
+
+
+7.Find out the list of students who failed in any of the 2 subject.
+A student will be considered failed if he failed in atleast 2 subject.
+The pass mark is 40 for any subject.
+if a student scored 39,39,100 in 3 subjects,Then the average is 59.33 but still he failed.
+
+*************
+PIG SCRIPT
+*************
+student = load '/data/student-data' as
+(
+studentName:chararray,
+studentEmail:chararray,
+marks:map[],
+class:chararray
+);
+ 
+failedStudents = filter student BY (marks#'Science' < 40 AND marks#'Math' < 40) OR (marks#'Math' < 40 AND marks#'English' < 40) AND (marks#'English' < 40 AND marks#'Science' < 40);
+dump failedStudents
+
+
+8.Find out the list of all the classes,where the student has scored 100 in all the subject.
+  It is not necessary that a single student should score hundered.
+  But all together one or other student should have score 100.
+
+  Eg: class 9-A  Amit scored 100 in English
+      class 9-A  vishal scored 100 in Maths
+      class 9-B  priya scored 100 in science
+
+We should include class 9 in  our result as we have 3 people score full marks in any of the subject.
+*************
+PIG SCRIPT
+*************
+
+student = load '/data/student-data' as
+(
+studentName:chararray,
+studentEmail:chararray,
+marks:map[],
+class:chararray
+);
+
+transform = FOREACH student GENERATE studentName,studentEmail,marks, SUBSTRING(class,0,1) as class;
+topper = FILTER transform by (marks#'Science' == 100) OR (marks#'Math' == 100) OR (marks#'English' == 100);
+grouped = GROUP topper by class 
+dump grouped;
+
+

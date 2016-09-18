@@ -1,0 +1,24 @@
+Shilpa Kumari sheety 	Shilpa.shetty@gmail.com	[English#58,Math#85,Science#42]	1:A
+Pavan Narayanana 	Pavan.narayan@inbox.com	[English#88,Math#75,Science#93]	1:B
+Rajdeep Debnath 	Rajdeep.debna@gmail.com	[English#98,Math#85,Science#89]	2:A
+Hemanth K Gunnam 	Hemanth.gunn@gmail.com	[English#67,Math#45,Science#56]	2:B
+Navdeep K Veedu 	Navdeep.veedu@gmail.com	[English#98,Math#45,Science#79]	3:A
+Durga praksh Nair 	Durga.nair@gmail.com	[English#98,Math#75,Science#87]	3:B
+Sunil Sundar Das 	Sunil.s@gmail.com	[English#98,Math#75,Science#88]	4:A
+Sandhya Kumari Hegde 	Sandhya.hegde@gmail.com	[English#98,Math#75,Science#89]	4:B
+Pramod vikram kumar 	Pramod.kumar@gmail.com	[English#98,Math#75,Science#90]	5:A
+Naveen prasad Supekar 	Naveen.supek@gmail.com	[English#98,Math#75,Science#91]	5:B
+Rekha kumari Menon 	Rekha.menon@gmail.com	[English#98,Math#75,Science#92]	6:A
+Ram kumar Mohan 	Ram.moh@protonmail.com	[English#98,Math#95,Science#93]	6:B
+Sita kumari sharma 	Sita_shivaram@yahoo.com	[English#88,Math#85,Science#94]	7:A
+Lakshman Parthasarathy 	Lakshman.para@gmail.com	[English#74,Math#65,Science#69]	7:B
+Surendran k Nath 	Surendra@rediffmail.com	[English#98,Math#75,Science#96]	8:A
+Sumathi Kumari  	Sumathi.kn@gmail.com	[English#98,Math#75,Science#97]	8:B
+Sunitha Sreejith 	Sunitha_s@gmail.com	[English#98,Math#75,Science#98]	9:A
+Sreejith kumar rao	Sreejith@gmail.com	[English#98,Math#75,Science#99]	9:B
+Sapna kumari mishra 	Sapna.mishra@gmail.com	[English#58,Math#55,Science#50]	10:A
+Sindhu panicker 	Sindhu.panic@gmail.com	[English#48,Math#55,Science#45]	10:B
+Bipin prasad paul 	Bipin.paul@gmail.com	[English#45,Math#55,Science#67]	11:A
+Vinneth Anijkath  	Vinneth_A@aol.com	[English#48,Math#55,Science#55]	11:B
+Subash AKhilesh 	Subash.s@gmail.com	[English#68,Math#75,Science#64]	12:A
+Ratheesh AK rath 	Ratheesh.ak@gmail.com	[English#48,Math#75,Science#57]	12:B
