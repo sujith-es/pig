@@ -1,0 +1,63 @@
+1.Find out the topper of the school(including all the sections all the classes)
+12:A|kiran|kiran@gmail.com|950
+
+2.Find out the topper for each class(including both the section)?
+
+output:-
+1:A|suraz|suraz.hadoop@gmail.com|900  -->topper from both A and B section
+2:B|pratap|pratap@gmail.com|890
+..
+..
+12:A|kiran|kiran@gmail.com|950
+
+3.For a given class,find out who scored highest in english,Maths,Science
+
+Input:- 9   (class number) hardcode this.
+9:A|suraz|suraz.hadoop@gmail.com|english:90  (scored highest from both the section)
+9:B|kiran|kiran@gmail.com|Maths:95
+9:A|Karan|karan.@gmail.com|Science:91
+
+4.Find out the class,which has better average percentage of score
+for a particular class,
+find out the total marks of all the students from both the section & then find the average.
+
+ex: class 9,All students has scored 75.86% on Average and it is the highest average for any class.
+9|75.86
+
+5.Find out all weak students from each class each section as they need special attention.
+A student is called as weak,if they have average of less than 60.
+
+6.Find out the list of students who have scored more than 95 in each subject.
+
+7.Find out the list of students who failed in any of the 2 subject.
+A student will be considered failed if he failed in atleast 2 subject.
+The pass mark is 40 for any subject.
+if a student scored 39,39,100 in 3 subjects,Then the average is 59.33 but still he failed.
+
+8.Find out the list of all the classes,where the student has scored 100 in all the subject.
+  It is not necessary that a single student should score hundered.
+  But all together one or other student should have score 100.
+
+  Eg: class 9-A  Amit scored 100 in English
+      class 9-A  vishal scored 100 in Maths
+      class 9-B  priya scored 100 in science
+
+We should include class 9 in  our result as we have 3 people score full marks in any of the subject.
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

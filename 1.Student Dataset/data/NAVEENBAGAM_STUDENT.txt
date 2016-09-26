@@ -1,0 +1,26 @@
+naveenbagam	naveen@gmail.com	[english#70,science#80,maths#95]	1:A
+chandrareddy	chandra.reddy@gmail.com	[english#75,science#60,maths#88]	1:B
+Antonydsuiza    at.dsuiza@yahoo.com	[english#68,science#88,maths#99]	2:A
+sachinsoodi	sachin@hotmail.com	[english#68,science#88,maths#99]	2:B
+chandanamandava	chandana.mandava@aol.in	[english#77,science#79,maths#89]	3:A
+surekhasingh	surekha.singh@yahoo.com	[english#58,science#71,maths#72]	3:B
+sandeeprana	sandeep.rana@gmail.com	[english#88,science#80,maths#83]	4:A
+kamalhasan	kamal.hasan@hotmail.com	[english#55,science#66,maths#55]	4:B
+sathpalrana	sathpal.83@gmail.com	[english#59,science#68,maths#44]	5:A
+rajinikanth	rajini.star@aol.in	[english#76,science#60,maths#74]	5:B
+ramanaidu	ram.suresh@yahoo.co.in	[english#66,science#76,maths#86]	6:A
+venkatesh	venkat.dp@hotmail.com	[english#98,science#80,maths#89]	6:B
+kalpanachawla	kalpana@gmail.com	[english#88,science#98,maths#99]	7:A
+barackobama	barack.us@gmail.com	[english#69,science#98,maths#69]	7:B
+rojaramani	roja.ramani@hotmail.com	[english#81,science#91,maths#71]	8:A
+tharunvarma	tharun.varma@gmail.com	[english#66,science#68,maths#59]	8:B
+rajamouli	raj.mouli@yahoo.com	[english#55,science#48,maths#69]	9:A
+tarakaramarao	ntr.nmt@gmail.com	[english#88,science#97,maths#99]	9:B
+harikrishna	hari.mc@hotmail.com	[english#59,science#78,maths#89]	10:A
+balakrishna	balayya.nbk@hotmail.com	[english#78,science#78,maths#99]	10:B
+ronaldcio	ronald.cio@yahoo.com	[english#58,science#69,maths#79]	11:A
+donaldtrump	dnd.trump@gmail.com	[english#48,science#58,maths#59]	11:B
+hillaryclinton	clinton.hill@gmail.com	[english#79,science#88,maths#82]	12:A
+morganfreeman	morgan.@hotmail.com	[english#98,science#97,maths#100]	12:B
+
+			

@@ -1,0 +1,24 @@
+SambhitK	sambit@gmail.com	[english#80,science#85,math#90]	1:A
+Smarajit	Smarajit@yahoo.com	[english#70,science#85,math#90]	1:B
+Rajalaxmi	Rajalaxmi@gmail.com	[english#50,science#85,math#90]	2:A
+SmrutiRekha	SmrutiRekha@hotmail.com	[english#80,science#85,math#90]	2:B
+MSLipika	Lipsa@hotmail.com	[english#90,science#85,math#90]	3:A
+Abhinash	Abhinash@gmail.com	[english#60,science#85,math#90]	3:B
+AnantaKumari	Ananta@yahoo.com	[english#95,science#65,math#80]	4:A
+Namrita Mallik	Namrita@gmail.com	[english#80,science#90,math#90]	4:B
+Padmabati	Padmabati@gmail.com	[english#60,science#45,math#50]	5:A
+Partha Kumar	Partha@hotmail.com	[english#50,science#60,math#45]	5:B
+Vimlesh rao	Vimlesh@hotmail.com	[english#75,science#85,math#50]	6:A
+Jtyoti shah	Jtyoti@yahoo.com	[english#80,science#90,math#65]	6:B
+Swarnabha	Swarnabha@gmail.com	[english#20,science#25,math#20]	7:A
+Monalisa	Monalisa@yahoo.com	[english#80,science#35,math#80]	7:B
+Susmita Roy	Susmita@hotmail.com	[english#40,science#55,math#90]	8:A
+Padmalochan	Padmalochan@gmail.com	[english#50,science#75,math#90]	8:B
+Tapan kumar	Tapan12@gmail.com	[english#80,science#85,math#55]	9:A
+Rajesh yadav	Rajesh@hotmail.com	[english#95,science#95,math#60]	9:B
+Sabyasachi	Sabyasachi@hotmail.com	[english#80,science#85,math#70]	10:A
+Rudra pratap	Rudra12@gmail.com	[english#70,science#75,math#40]	10:B
+Mahesh yadav	Mahesh@gmail.com	[english#55,science#65,math#90]	11:A
+Dillip kumar	Dillip@hotmail.com	[english#40,science#65,math#30]	11:B
+Sangitaviswa	Sangita@yahoo.com	[english#75,science#45,math#45]	12:A
+Pramod sharma	Pramod@gmail.com	[english#60,science#35,math#90]	12:B
