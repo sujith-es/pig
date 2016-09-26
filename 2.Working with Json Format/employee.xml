@@ -1,0 +1,43 @@
+<employees>
+
+	<employee>
+		<empId>101</empId>
+		<empName>suraj</empName>
+		<empSalary>5000</empSalary>
+		<empCompany>TCS</empCompany>
+		<empEmail>suraj@tcs.com</empEmail>
+	</employee>
+
+	<employee>
+		<empId>102</empId>
+		<empName>shyam</empName>
+		<empSalary>7000</empSalary>
+		<empCompany>capgemini</empCompany>
+		<empEmail>shyam@capgemini.com</empEmail>
+	</employee>
+
+	<employee>
+		<empId>103</empId>
+		<empName>kumar</empName>
+		<empSalary>5000</empSalary>
+		<empCompany>cognizant</empCompany>
+		<empEmail>kumar@congizant.com</empEmail>
+	</employee>
+
+	<employee>
+		<empId>104</empId>
+		<empName>mahesh</empName>
+		<empSalary>7000</empSalary>
+		<empCompany>amazon</empCompany>
+		<empEmail>mahesh@amazon.com</empEmail>
+	</employee>
+
+	<employee>
+		<empId>105</empId>
+		<empName>kaith</empName>
+		<empSalary>9000</empSalary>
+		<empCompany>nowonders</empCompany>
+		<empEmail>kaith@nowonders.com</empEmail>
+	</employee>
+
+</employees>

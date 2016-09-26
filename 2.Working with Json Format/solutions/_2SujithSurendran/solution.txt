@@ -1,0 +1,59 @@
+1. Execute Java program, use property file to set input and output file path
+
+2. Converted Json file
+=======================
+{
+	"employees": {
+		"employee": [{
+			"empEmail": "suraj@tcs.com",
+			"empName": "suraj",
+			"empCompany": "TCS",
+			"empId": 101,
+			"empSalary": 5000
+		}, {
+			"empEmail": "shyam@capgemini.com",
+			"empName": "shyam",
+			"empCompany": "capgemini",
+			"empId": 102,
+			"empSalary": 7000
+		}, {
+			"empEmail": "kumar@congizant.com",
+			"empName": "kumar",
+			"empCompany": "cognizant",
+			"empId": 103,
+			"empSalary": 5000
+		}, {
+			"empEmail": "mahesh@amazon.com",
+			"empName": "mahesh",
+			"empCompany": "amazon",
+			"empId": 104,
+			"empSalary": 7000
+		}, {
+			"empEmail": "kaith@nowonders.com",
+			"empName": "kaith",
+			"empCompany": "nowonders",
+			"empId": 105,
+			"empSalary": 9000
+		}]
+	}
+}
+
+3. Load file to HDFS
+=====================
+$> hadoop fs -put '/home/cloudera/employee.json' '/user/cloudera/employee.json'
+
+
+4. execute pig in cluster mode with schema (can use appropriate data types here)
+==================================================================================
+grunt> json = load '/user/cloudera/employee.json'
+USING JsonLoader('employees:chararray, employee:{(empEmail:chararray,
+empName:chararray,
+empCompany:chararray,
+empId:chararray,
+empSalary:chararray)}'
+);
+
+
+5. View Json in pig 
+===================
+gurnt> dump json;

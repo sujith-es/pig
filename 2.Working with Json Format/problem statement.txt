@@ -1,0 +1,13 @@
+1.Consider the employee.xml file given along with this Folder.
+
+Assignment:-
+-------------
+1.Write a Java Project to convert the xml to json.
+  You should create a maven project.
+  Please use some 3rd party library to convert xml to json.
+  Please google out and you should get options.
+  This program will give you json file with json data.
+
+2.Now you load this json to pig and convert the data to structural format.
+
+
